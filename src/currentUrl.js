@@ -3,7 +3,7 @@
 const apiUrl = 'https://ksprojects.pl/'
 
 const currentUrl = () => {
-  let rootUrl = windows.location.pathname;
+  let rootUrl = window.location.pathname;
   if (rootUrl === '/') {
     rootUrl = ''
   }
