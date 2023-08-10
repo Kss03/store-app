@@ -10,9 +10,12 @@ const connectDB = require('./db/connect');
 const productRouter = require('./routes/product');
 
 app.use(express.json())
-app.use('/', express.static(__dirname + '/public/client'))
 
 app.use('/api/v1', productRouter)
+
+app.use('/', express.static(__dirname + '/public/client'))
+app.use('/*', express.static(__dirname + '/public/client'))
+
 
 const port = process.env.PORT || 5000;
 
