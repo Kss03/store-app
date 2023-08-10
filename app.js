@@ -10,7 +10,7 @@ const connectDB = require('./db/connect');
 const productRouter = require('./routes/product');
 
 app.use(express.json())
-app.use('/store-app', express.static(__dirname + '/public/client'))
+app.use('/', express.static(__dirname + '/public/client'))
 
 app.use('/api/v1', productRouter)
 
