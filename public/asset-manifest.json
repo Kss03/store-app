@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.cdd31f65.css",
-    "main.js": "/static/js/main.5ac5a5b1.js",
-    "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
-    "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.4753c5ba57962b4d7bf8.woff",
-    "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.6d63d0501e5ed7b79dab.woff2",
-    "index.html": "/index.html",
-    "main.cdd31f65.css.map": "/static/css/main.cdd31f65.css.map",
-    "main.5ac5a5b1.js.map": "/static/js/main.5ac5a5b1.js.map",
-    "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
+    "main.css": "https://ksprojects.pl/store-app/static/css/main.7c8c7920.css",
+    "main.js": "https://ksprojects.pl/store-app/static/js/main.89bde9b1.js",
+    "static/js/787.cda612ba.chunk.js": "https://ksprojects.pl/store-app/static/js/787.cda612ba.chunk.js",
+    "static/media/bootstrap-icons.woff?": "https://ksprojects.pl/store-app/static/media/bootstrap-icons.4753c5ba57962b4d7bf8.woff",
+    "static/media/bootstrap-icons.woff2?": "https://ksprojects.pl/store-app/static/media/bootstrap-icons.6d63d0501e5ed7b79dab.woff2",
+    "index.html": "https://ksprojects.pl/store-app/index.html",
+    "main.7c8c7920.css.map": "https://ksprojects.pl/store-app/static/css/main.7c8c7920.css.map",
+    "main.89bde9b1.js.map": "https://ksprojects.pl/store-app/static/js/main.89bde9b1.js.map",
+    "787.cda612ba.chunk.js.map": "https://ksprojects.pl/store-app/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cdd31f65.css",
-    "static/js/main.5ac5a5b1.js"
+    "static/css/main.7c8c7920.css",
+    "static/js/main.89bde9b1.js"
   ]
 }
