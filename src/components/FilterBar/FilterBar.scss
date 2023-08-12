@@ -3,6 +3,7 @@
 
   .filter-btn {
     width: 100%;
+    min-width: 150px;
     margin-bottom: 10px;
     padding: 7px 15px;
     background-color: $color-white;
@@ -14,6 +15,9 @@
 
   .filter-form {
     background-color: inherit;
+    // @media(max-width: 991.98px) {
+    //   width: 210%;
+    // }
 
     .form-control {
       margin-bottom: 10px;

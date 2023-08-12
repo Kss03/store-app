@@ -128,7 +128,7 @@ const SingleProduct = () => {
                 <button className="btn p-0 me-2 border-1" 
                   style={{fontSize: 30}}
                   onClick={() => countMinus()}>
-                  <i class="bi bi-dash-lg " ></i>
+                  <i className="bi bi-dash-lg " ></i>
                 </button>
                 
                 <span style={{fontSize: 40}} className="me-2 fw-bold">
@@ -138,7 +138,7 @@ const SingleProduct = () => {
                 <button className="btn p-0 me-2 border-1" 
                   style={{fontSize: 30}}
                   onClick={() => countPlus()}>
-                  <i class="bi bi-plus-lg"></i>
+                  <i className="bi bi-plus-lg"></i>
                 </button>
               </div>
 

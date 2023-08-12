@@ -1,34 +1,14 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import ErrorBoundary from "../Error/Error";
+
 
 const ProductList = ({data}) => {
 
-  const [sortBy, setSortBy] = useState(null)
-
-  const cardArr = data ? productCard(data) : 'Loading';
-
-
+ const cardArr = data.map((item, index) => <ProductCard item={item} key={index}/>)
 
   return (
     <>
-
-      <div className="sort-products d-flex  justify-content-around align-items-center ms-lg-auto mb-2 py-1 py-lg-2 px-2 px-lg-2 overflow-hidden">
-        <span>Sort&nbsp;By: </span>
-        <select name="sorting" id="sorting" className=" selectbar border-0" onChange={(e) => setSortBy(e.target.value)}>
-          <option className="selectbar-option" value='price-lowest'>
-            Price (Lowest)
-          </option>
-          <option className="selectbar-option" value='price-highest'>
-            Price (Highest)
-          </option>
-          <option className="selectbar-option" value='a-z'>
-            Name (A-Z)
-          </option>
-          <option className="selectbar-option" value='z-a'>
-            Name (Z-A)
-          </option>
-        </select>
-      </div>
       <div className="product-list row">
         {cardArr}
       </div>
@@ -36,10 +16,12 @@ const ProductList = ({data}) => {
   )
 }
 
-const productCard = (data) => {
-  return data.map((item) => {
-    let {name, price, category, createdAt, color, brand, about, _id} = item
 
+
+const ProductCard = ({item}) => {
+
+    let {name, price, category, createdAt, color, brand, about, _id} = item
+    
     if (about) {
       if (about.length > 150) {
         about = `${about.slice(0, 170)}...`;
@@ -47,7 +29,7 @@ const productCard = (data) => {
     }
 
     return (
-      <div className=" col-lg-12 col-12 product-card mx-0 mx-lg-2 my-1 my-lg-2 border shadow bg-white">
+      <div className=" col-lg-12 col-12 product-card mx-0 mx-lg-0 my-1 my-lg-2 border shadow bg-white">
         <div className=" row gx-0">
           <div className="col-12 col-lg-4 card-image mb-3 mb-lg-0">
             <Link to={`/products/${_id}`}>
@@ -68,7 +50,9 @@ const productCard = (data) => {
         </div>
       </div>
     )
-  })
+
 }
+
+
 
 export default ProductList

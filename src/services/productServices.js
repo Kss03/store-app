@@ -1,11 +1,13 @@
 import axios from "axios"
-import { apiUrl } from "../currentUrl"
+
+const remoteURL = 'https://ksprojects.pl/store-app/'
+const url = 'http://192.168.0.73:5000/'
 
 const getProducts = async (item) => {
   try {
-    const response = await axios.get(`http://192.168.0.73:5000/api/v1/products`, {params: item})
-    const {data} = await response
-    return data.products
+    const response = await axios.get(`${remoteURL}api/v1/products`, {params: item})
+    const {data} = response
+    return data
   } catch (error) {
     console.log(error)
   }
@@ -13,8 +15,8 @@ const getProducts = async (item) => {
 
 const getOneProduct = async (id) => {
   try {
-    const response = await axios.get(`http://192.168.0.73:5000/api/v1/products/${id}`)
-    const {data} = await response
+    const response = await axios.get(`${remoteURL}api/v1/products/${id}`)
+    const {data} = response
     return data
   } catch (error) {
     console.log(error)

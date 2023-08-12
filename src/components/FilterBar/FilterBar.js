@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, Children } from "react"
 import { Link } from "react-router-dom"
 import {v4} from 'uuid'
 import MediaQuery from "react-responsive"
@@ -7,7 +7,9 @@ import {useMediaQuery} from "react-responsive"
 //service
 import {getProducts} from "../../services/productServices"
 
-const FilterBar = ({onGetProducts}) => {
+import { Sorting } from "../Products/Products"
+
+const FilterBar = ({onGetProducts, sortItems, setSortBy}) => {
 
   //value from input
   const [nameInput, setNameInput] = useState('')
@@ -41,7 +43,6 @@ const FilterBar = ({onGetProducts}) => {
       color: colorRadio,
       priceRange: priceMin + ', ' + priceMax
     }
-    console.log('on filterComp: ', formData)
     onGetProducts(formData)
   }
 
@@ -52,7 +53,7 @@ const FilterBar = ({onGetProducts}) => {
   const getProductsOnInput = () => {
     if (nameInput) {
       getProducts({name: nameInput})
-        .then((data) => setFastSearch(data))
+        .then((data) => setFastSearch(data.products))
         .catch((error) => console.log(error))
         return
     } else {
@@ -61,20 +62,17 @@ const FilterBar = ({onGetProducts}) => {
   }
 
 
-
-
-
   const categoryArray = [
    'Office', 'Living Room', 'Kitchen', 'Bedroom', 'Dining', 'Kids'
   ]
 
   //create items for category block
-  const categoryItems = categoryArray.map((item) => {
+  const categoryItems = categoryArray.map((item, index) => {
     return (
-      <>
+      <div key={index}>
         <input type="radio" className="btn-check" name='category' value={item} id={'category' + item} autoComplete="off" />
         <label className=" btn rounded-pill px-3 py-0" for={'category' + item}>{item}</label>
-      </>
+      </div>
     )
   })
 
@@ -112,7 +110,6 @@ const FilterBar = ({onGetProducts}) => {
   //create items for fast search block
   const searchedItems = fastSearch.map((item) => {
     const {name, brand, price, _id} = item;
-    console.log(_id)
 
     return (
       <div key={v4()} className="item d-flex">
@@ -130,15 +127,22 @@ const FilterBar = ({onGetProducts}) => {
   return(
     <div className="filter-bar">
       <MediaQuery maxWidth={997.98}>
-        <button type="button" 
-          className=" btn filter-btn"
-          data-bs-toggle="collapse" 
-          data-bs-target="#collapseExample" 
-          aria-expanded="false" 
-          aria-controls="collapseExample"
-          onClick={() => setIsCollapse(!isCollapse)}>
-            Filters
-        </button>
+        <div className="row">
+          <div className="col-6 col-md-4">
+            <button type="button" 
+              className=" btn filter-btn"
+              data-bs-toggle="collapse" 
+              data-bs-target="#collapseFilter" 
+              aria-expanded="false" 
+              aria-controls="collapseFilter"
+              onClick={() => setIsCollapse(!isCollapse)}>
+                Filters
+            </button>
+          </div>
+          <div className="col-6 col-md-4">
+            <Sorting sortItems={sortItems} setSortBy={setSortBy}/>
+          </div>
+        </div>
       </MediaQuery>
       <form className= {` ${collapseClass} filter-form`} action="" onSubmit={onSubmitForm}>
         <div className="form-control position-relative"
@@ -152,7 +156,7 @@ const FilterBar = ({onGetProducts}) => {
               placeholder="type the name..."
               className="form-input"
               autoComplete="off"
-/>
+            />
             <div className={` ${showFastSearch} position-absolute top-100 fast-search-block`}>
               {searchedItems}
             </div>

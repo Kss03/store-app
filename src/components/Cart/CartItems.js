@@ -66,7 +66,7 @@ const CartItem = ({item, saveChanges}) => {
               <h5>{name}</h5>
               <p className="m-0 d-flex align-items-center">
                 <span className="me-2">Color:</span>
-                <div className="p-2 rounded-circle d-inline-block" style={{backgroundColor: color}}></div>
+                <span className="p-2 rounded-circle d-inline-block" style={{backgroundColor: color}}></span>
               </p>
             </div>
           </div>
@@ -107,7 +107,7 @@ const CartItem = ({item, saveChanges}) => {
           <div className="d-flex justify-content-end align-items-center h-100">
             <button className=" btn btn-danger py-1 px-2"
               onClick={() => deleteProduct()}>
-              <i class="bi bi-trash3-fill"></i>
+              <i className="bi bi-trash3-fill"></i>
             </button>
           </div>
         </div>

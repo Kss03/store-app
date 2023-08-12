@@ -30,8 +30,8 @@ const Header = () => {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="d-flex justify-content-end align-items-start align-items-lg-center flex-grow-1 mb-4 mb-lg-0 me-2 me-lg-5 pe-3">
-                <a class="link-reset nav-link-btn ps-3 ps-lg-0 mb-3 mb-lg-0 me-1 me-lg-3" href="https://github.com/Kss03/store-app-react">API</a>
-                <a class="link-reset nav-link-btn ps-3 ps-lg-0 mb-3 mb-lg-0 me-1 me-lg-5" href="https://github.com/Kss03/store-app-react">Frontend</a>
+                <a className="link-reset nav-link-btn ps-3 ps-lg-0 mb-3 mb-lg-0 me-1 me-lg-3" href="https://github.com/Kss03/store-app-react">API</a>
+                <a className="link-reset nav-link-btn ps-3 ps-lg-0 mb-3 mb-lg-0 me-1 me-lg-5" href="https://github.com/Kss03/store-app-react">Frontend</a>
                 
                 <Link  onClick={() => handleClose()} className="link-reset nav-link-btn ps-3 ps-lg-0 mb-3 mb-lg-0 me-1 me-lg-3" to="/products">Products</Link>
                 <Link  onClick={() => handleClose()} className="link-reset nav-link-btn ps-3 ps-lg-0" to="/card">Card</Link>

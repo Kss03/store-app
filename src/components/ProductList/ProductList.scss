@@ -2,15 +2,22 @@
 
 .sort-products {
   width: auto;
-  max-width: 230px;
+  max-width: 250px;
   border-radius: 24px;
   box-shadow: $box-shadow-sm;
   background-color: $color-white;
 
+
+
   .selectbar {
     border: none;
     outline: none;
-    background-color: inherit;
+    background: none;
+  }
+}
+@media (max-width: 991.98px) {
+  .sort-products {
+    padding: 7px 15px;
   }
 }
 

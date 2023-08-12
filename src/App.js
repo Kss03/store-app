@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 
 import './App.css';
 import ProductsPage from './pages/ProductsPage';
@@ -9,18 +9,18 @@ import Footer from './components/Footer/Footer';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Header />
       <Routes>
         <Route path='/'>
-          <Route index element={<Navigate to='products' />}></Route>
+          <Route index element={<Navigate to='/products' />}></Route>
         </Route>
-        <Route path="products" element={<ProductsPage />} />
-        <Route path="products/:id" element={<SingleProductPage />} />
-        <Route path="card" element={<CartPage />} />
+        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/products/:id" element={<SingleProductPage />} />
+        <Route path="/card" element={<CartPage />} />
       </Routes>
       <Footer /> 
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
