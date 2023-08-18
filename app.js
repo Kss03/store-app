@@ -8,10 +8,17 @@ app.use(cors())
 
 const connectDB = require('./db/connect');
 const productRouter = require('./routes/product');
+const loginRouter = require('./routes/login');
+const notFound = require('./middleware/errorNotFound');
+const errorMiddleware = require('./middleware/errorMiddleware');
 
 app.use(express.json())
 
-app.use('/api/v1', productRouter)
+app.use('/api/v1/products', productRouter)
+app.use('/api/v1/login', loginRouter)
+
+app.use(notFound);
+app.use(errorMiddleware);
 
 const port = process.env.PORT || 5000;
 

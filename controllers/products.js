@@ -48,8 +48,14 @@ const getAllProducts = async (req, res) => {
 }
 
 const createProduct = async (req,res) => {
+  console.log(req.body)
+
   await Product.create(req.body)
   res.status(201).json({msg: req.body})
 }
 
-module.exports = {getOneProduct, getAllProducts, createProduct}
+const orderProducts = async (req, res) => {
+  res.status(201).json({msg: 'order accepted for processing'})
+}
+
+module.exports = {getOneProduct, getAllProducts, createProduct, orderProducts}
