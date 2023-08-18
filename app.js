@@ -14,7 +14,7 @@ const errorMiddleware = require('./middleware/errorMiddleware');
 
 app.use(express.json())
 
-app.use('/', express.static(__dirname + '/public/client'))
+app.use('/', express.static(__dirname + '/public/frontend/build'))
 
 app.use('/api/v1/products', productRouter)
 app.use('/api/v1/login', loginRouter)
