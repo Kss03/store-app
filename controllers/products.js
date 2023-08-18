@@ -9,7 +9,7 @@ const getOneProduct = async (req, res) => {
 }
 
 const getAllProducts = async (req, res) => {
-  const {name, category, priceRange, dreatedAt, available, color, brand} = req.query;
+  const {name, category, priceRange, createdAt, available, color, brand} = req.query;
 
   let reqQuery = {}
 
@@ -41,7 +41,6 @@ const getAllProducts = async (req, res) => {
     reqQuery.brand = {$regex: brand, $options: 'i'}
   }
 
-  // const products = await Product.find(reqQuery)
   const products = await Product.find(reqQuery)
 
 
@@ -49,8 +48,14 @@ const getAllProducts = async (req, res) => {
 }
 
 const createProduct = async (req,res) => {
+  console.log(req.body)
+
   await Product.create(req.body)
   res.status(201).json({msg: req.body})
 }
 
-module.exports = {getOneProduct, getAllProducts, createProduct}
+const orderProducts = async (req, res) => {
+  res.status(201).json({msg: 'order accepted for processing'})
+}
+
+module.exports = {getOneProduct, getAllProducts, createProduct, orderProducts}
