@@ -1,0 +1,32 @@
+
+
+.single-product {
+
+  .back-button {
+    button {
+      border-radius: 12px;
+    }
+  }
+
+
+  .product-block {
+    padding: 15px 15px;
+    background-color: $color-white;
+    border-radius: 22px;
+    box-shadow: $box-shadow;
+  }
+
+  .slider {
+
+    img {
+      border-radius: 22px;
+    }
+  }
+
+  .add-btn {
+    background-color: $cta-red;
+    color: $font-color-white;
+    font-weight: 700;
+    border-radius: 12px;
+  }
+}

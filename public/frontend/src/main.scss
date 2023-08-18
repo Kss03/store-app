@@ -1,0 +1,15 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import "./index.scss";
+
+
+//components
+@import "./components/FilterBar/FilterBar.scss";
+@import "./components/navbar/Header.scss";
+@import "./components/ProductList/ProductList.scss";
+@import './components/SingleProduct/SingleProduct.scss';
+@import './components/Cart/Cart.scss';
+@import './components/Products/Products.scss';
+@import './components/Loading/Loading.scss';
+@import './components/Error/ErrorMessage.scss';
+@import './components/Login/Login.scss';

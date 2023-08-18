@@ -1,0 +1,32 @@
+
+
+//pagination component
+.products__pagination {
+
+  .pag-item {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: $cta-blue;
+    color: $font-color-white;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    transition: color ease-in-out .2s, backgroung-color ease-in-out .2s, opacity ease-in-out .2s;
+  }
+
+  .pag-item:hover {
+    opacity: .9;
+  }
+  .pag-item:active {
+    background-color: $cta-blue-text;
+    color: $cta-blue;
+  }
+  .pag-item:disabled {
+    opacity: .7;
+  }
+
+  .current-page {
+    background-color: $color-accend;
+  }
+}

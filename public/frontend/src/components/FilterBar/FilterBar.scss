@@ -1,0 +1,128 @@
+.filter-bar {
+  background-color: inherit;
+
+  .filter-btn {
+    width: 100%;
+    min-width: 150px;
+    margin-bottom: 10px;
+    padding: 7px 15px;
+    background-color: $color-white;
+    border-radius: 25px;
+    box-shadow: $box-shadow;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .filter-form {
+    background-color: inherit;
+    // @media(max-width: 991.98px) {
+    //   width: 210%;
+    // }
+
+    .form-control {
+      margin-bottom: 10px;
+      padding: 15px 15px;
+      background-color: $color-white;
+      border-radius: 22px;
+      box-shadow: $box-shadow;
+
+      .form-input {
+        width: 100%;
+        padding: 3px 10px ;
+        border-radius: 15px;
+        outline: none;
+        border: 1px solid $color-grey;
+
+        :focus {
+          border: 1px solid $color-green;
+        }
+      }
+
+      .fast-search-block {
+        margin-top: 10px;
+        padding: 15px 15px;
+        width: auto;
+        min-width: 300px;
+        background-color: $color-white;
+        border-radius: 11px;
+        box-shadow: $box-shadow-sm;
+
+        .item {
+          padding: 5px 10px;
+          margin-bottom: 5px;
+          border-bottom: 1px solid $color-grey;
+          color: $font-color-dark;
+
+          .link {
+            color: inherit;
+          }
+        }
+      }
+
+      .selectbar {
+        width: 100%;
+        padding: 3px 10px;
+        border: 1px solid $color-grey;
+        border-radius: 15px;
+
+      }
+
+      .colors {
+
+        .color-white {
+          background-color: $color-white;
+          box-shadow: 1px 1px rgba(45, 45, 45, 0.18), -1px -1px rgba(45, 45, 45, 0.18), -1px 0 rgba(45, 45, 45, 0.18), 0 -1px rgba(45, 45, 45, 0.18);
+        }
+      }
+
+      .price-range {
+        width: 100%;
+        background: $color-green;
+        color: $color-green;
+      }
+
+      .submit-button {
+        width: 100%;
+        padding: 5px 15px;
+        border-radius: 14px;
+        background-color: $cta-red;
+        color: $bg-pink;
+        font-weight: 700;
+      }
+      .submit-button:hover {
+        background-color: $bg-pink;
+        color: $cta-red;
+      }
+
+      .button-reset {
+        width: 100%;
+        padding: 5px 15px;
+        border-radius: 14px;
+        background-color: $cta-blue-text;
+        color: $font-color-white;
+        font-weight: bold;
+      }
+      .button-reset:hover {
+        background-color: $color-white;
+        border: 1px solid $cta-blue-text;
+        opacity: .9;
+        color: $cta-blue-text;
+      }
+      .button-reset:active {
+        background-color: $cta-blue;
+        color: $font-color-white;
+      }
+
+
+    }
+
+    .color-btn {
+      width: 15px;
+      max-width: 15px;
+      height: 15px;
+      max-height: 15px;
+    } 
+  }
+
+
+}

@@ -1,0 +1,39 @@
+
+
+
+.login-section {
+
+  
+  .form-container {
+    min-height: 70vh;
+    max-width: 450px;
+
+    form {
+      width: 100%;
+    }
+
+
+    .form-block {
+      padding: 30px 30px;
+      margin-bottom: 20px;
+      background-color: $color-white;
+      display: flex;
+      flex-direction: column;
+      border-radius: 8px;
+      box-shadow: $box-shadow;
+
+      .login-btn {
+        background-color: $cta-blue;
+        color: $font-color-white;
+        transition: opacity $transition-dot-2;
+      }
+      :hover {
+        opacity: .9;
+      }
+      :active {
+        opacity: 1;
+      }
+      
+    }
+  }
+}
