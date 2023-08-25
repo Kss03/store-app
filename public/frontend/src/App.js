@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import './App.css';
 
+import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import ProductsPage from './pages/ProductsPage';
 import Header from './components/navbar/Header';
@@ -11,6 +12,7 @@ import CartPage from './pages/CartPage';
 import SingleProductPage from './pages/SingleProductPage';
 import Footer from './components/Footer/Footer';
 import { onLogin } from './reducers/Login/Login';
+import CreatorPage from './pages/CreatorPage';
 
 function App() {
 
@@ -32,12 +34,13 @@ function App() {
       <Header />
       <Routes>
         <Route path='/'>
-          <Route index element={<Navigate to='/products' />}></Route>
+          <Route index element={<Navigate to="/products" />}></Route>
         </Route>
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/products/:id" element={<SingleProductPage />} />
         <Route path="/card" element={<CartPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/creator" element={<CreatorPage />} />
       </Routes>
       <Footer /> 
     </HashRouter>

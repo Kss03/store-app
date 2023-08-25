@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom"
 
+import { getImages } from "../../services/getImages"
+
 const CartItems = ({cartData, saveChanges}) => {
 
   
@@ -19,7 +21,7 @@ const CartItems = ({cartData, saveChanges}) => {
 
 const CartItem = ({item, saveChanges}) => {
   
-  const {name, price, amount, color, _id} = item
+  const {name, price, amount, color, _id, images} = item
 
   const subtotalValue = Number(amount) * Number(price)
 
@@ -53,6 +55,18 @@ const CartItem = ({item, saveChanges}) => {
     saveChanges(newCart)
   }
 
+  const onImage = () => {
+    const imageUrl = getImages(images)
+
+    return (
+      <Link to={`/products/${_id}`} className="link-reset d-inline-block">
+        <img src={imageUrl[0]} className="card-img" alt="img" />
+      </Link>
+    )
+  }
+
+  const imageItems = onImage()
+
   return (
     <div className="cart-card">
       
@@ -60,9 +74,7 @@ const CartItem = ({item, saveChanges}) => {
         <div className=" col-12 col-lg-4 mb-3 mb-lg-0">
           <div className="d-flex flex-nowrap justify-content-start align-items-center">
             <div className="cart-image me-4">
-              <Link className="link-reset d-inline-block" to={`/products/${_id}`}>
-                <img className="" src="https://picsum.photos/1920/1080" alt="" />
-              </Link>
+              {imageItems}
             </div>
             <div>
               <h5>{name}</h5>

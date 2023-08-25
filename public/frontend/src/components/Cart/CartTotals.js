@@ -9,14 +9,19 @@ const CartTotals = ({count, orderCart}) => {
   const shipping = 5.34
 
 
-
   const loginButton = (
     <Link to='/login' state={{location: useLocation().pathname}}>
       <button className="btn cart-login w-100">Log In</button>
     </Link>
   )
 
-  const submitButton = <button className="btn cart-login cart-order w-100" onClick={() => orderCart()}>Order</button>
+  const submitButton = (
+    <button className="btn cart-login cart-order w-100" 
+      onClick={(e) => {
+        e.target.disabled = true
+        orderCart()
+      }}>Order</button>
+  )
 
   const LoginOrderButton = isLogin ? submitButton : loginButton
 

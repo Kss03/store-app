@@ -2,6 +2,11 @@
 
 .header {
 
+  .header-title {
+    font-family: $font-marck;
+    font-size: 30px;
+  }
+
   .navbar {
     background-color: $color-white;
     border-bottom-left-radius: 12px;

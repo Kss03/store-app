@@ -1,5 +1,16 @@
 
 
+@font-face {
+  // название шрифта(чтобы не запутаться лучше указать название папки со шрифтом) 
+  font-family: "caravan-font"; 
+  // адрес шрифта и тип 
+  src: url("../public/fonts/Caravan.otf") format("opentype"); 
+  font-style: normal; 
+  font-weight: normal; 
+} 
+
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Open+Sans:wght@400;600;700&display=swap');
+
 // main variables
 $font-color-dark: #1A1F16;
 $font-color-grey: #60695C;
@@ -17,6 +28,7 @@ $color-red: #E5252C;
 $cta-red: #A63A50;
 $color-dark: #1A1F16; 
 $color-grey: #60695C;
+$font-marck: "Marck Script";
 
 $box-shadow: 0px 12px 30px 0px rgba(45, 45, 45, 0.18);
 $box-shadow-sm: 0px 6px 15px 0px rgba(45, 45, 45, 0.18);

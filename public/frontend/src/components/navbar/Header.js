@@ -42,7 +42,7 @@ const Header = () => {
       <Navbar expand='lg' className="navbar mb-3">
         <Container>
           <Link className="link-reset" to='/'>
-            <Navbar.Brand className="fw-bold">{userName}</Navbar.Brand>
+            <Navbar.Brand className="fw-bold header-title">{userName}</Navbar.Brand>
           </Link>
           <Navbar.Toggle onClick={() => handleShow()} aria-controls={`offcanvasNavbar-expand-lg`} />
           <Navbar.Offcanvas
@@ -58,14 +58,25 @@ const Header = () => {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="d-flex justify-content-end align-items-start align-items-lg-center flex-grow-1 mb-4 mb-lg-0 me-2 me-lg-5 pe-3">
-                <a className="link-reset nav-link-btn ps-3 ps-lg-0 mb-3 mb-lg-0 me-1 me-lg-3" href="https://github.com/Kss03/store-app/tree/api">API</a>
-                <a className="link-reset nav-link-btn ps-3 ps-lg-0 mb-3 mb-lg-0 me-1 me-lg-5" href="https://github.com/Kss03/store-app/tree/frontend">Frontend</a>
+                <a className="link-reset nav-link-btn ps-3 ps-lg-0 mb-3 mb-lg-0 me-1 me-lg-5" href="https://github.com/Kss03/store-app">Source Code</a>
+
+
+                <Link onClick={() => handleClose()} 
+                  className="link-reset nav-link-btn ps-3 ps-lg-0 mb-3 mb-lg-0 me-1 me-lg-3"
+                  to="/creator">Create products</Link>
                 
-                <Link  onClick={() => handleClose()} className="link-reset nav-link-btn ps-3 ps-lg-0 mb-3 mb-lg-0 me-1 me-lg-3" to="/products">Products</Link>
-                <Link  onClick={() => handleClose()} className="link-reset nav-link-btn ps-3 ps-lg-0" to="/card">
-                  <i className="bi bi-basket2 me-1"></i>
-                  Cart
-                  </Link>
+                <Link  onClick={() => handleClose()} 
+                  className="link-reset nav-link-btn ps-3 ps-lg-0 mb-3 mb-lg-0 me-1 me-lg-3" 
+                  to="/">Home Page</Link>
+                <Link  onClick={() => handleClose()} 
+                  className="link-reset nav-link-btn ps-3 ps-lg-0 mb-3 mb-lg-0 me-1 me-lg-3" 
+                  to="/products">Products</Link>
+                <Link  onClick={() => handleClose()} 
+                  className="link-reset nav-link-btn ps-3 ps-lg-0" 
+                  to="/card">
+                    <i className="bi bi-basket2 me-1"></i>
+                    Cart
+                </Link>
               </Nav>
               {logInOutButton}
             </Offcanvas.Body>
@@ -77,3 +88,51 @@ const Header = () => {
 }
 
 export default Header
+
+
+{/* <section className="header">
+      <Navbar expand='lg' className="navbar mb-3">
+        <Container>
+          <Link className="link-reset" to='/'>
+            <Navbar.Brand className="fw-bold header-title">{userName}</Navbar.Brand>
+          </Link>
+          <Navbar.Toggle onClick={() => handleShow()} aria-controls={`offcanvasNavbar-expand-lg`} />
+          <Navbar.Offcanvas
+            show={show}
+            id={`offcanvasNavbar-expand-lg`}
+            aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
+            placement="end"
+          >
+            <Offcanvas.Header closeButton onClick={() => handleClose()}>
+              <Offcanvas.Title id={`offcanvasNavbarLabel-expand-lg`}>
+                {userName}
+              </Offcanvas.Title>
+            </Offcanvas.Header>
+            <Offcanvas.Body>
+              <Nav className="d-flex justify-content-end align-items-start align-items-lg-center flex-grow-1 mb-4 mb-lg-0 me-2 me-lg-5 pe-3">
+                <a className="link-reset nav-link-btn ps-3 ps-lg-0 mb-3 mb-lg-0 me-1 me-lg-5" href="https://github.com/Kss03/store-app">Source Code</a>
+
+
+                <Link onClick={() => handleClose()} 
+                  className="link-reset nav-link-btn ps-3 ps-lg-0 mb-3 mb-lg-0 me-1 me-lg-3"
+                  to="/creator">Create products</Link>
+                
+                <Link  onClick={() => handleClose()} 
+                  className="link-reset nav-link-btn ps-3 ps-lg-0 mb-3 mb-lg-0 me-1 me-lg-3" 
+                  to="/">Home Page</Link>
+                <Link  onClick={() => handleClose()} 
+                  className="link-reset nav-link-btn ps-3 ps-lg-0 mb-3 mb-lg-0 me-1 me-lg-3" 
+                  to="/products">Products</Link>
+                <Link  onClick={() => handleClose()} 
+                  className="link-reset nav-link-btn ps-3 ps-lg-0" 
+                  to="/card">
+                    <i className="bi bi-basket2 me-1"></i>
+                    Cart
+                </Link>
+              </Nav>
+              {logInOutButton}
+            </Offcanvas.Body>
+          </Navbar.Offcanvas>
+        </Container>
+      </Navbar>
+    </section> */}

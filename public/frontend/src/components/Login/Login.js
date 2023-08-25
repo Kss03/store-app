@@ -49,8 +49,8 @@ const Login = () => {
       });
   }
 
-  const onSubmitLogin = (userData) => {
-    const res = postLogin(userData)
+  const onSubmitLogin = async (userData) => {
+    const res = await postLogin(userData)
     return res
   }
 

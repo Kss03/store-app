@@ -40,6 +40,9 @@ const productSchema = new mongoose.Schema({
       values: ['liddy', 'ikea', 'jysk'],
       message: '{VALUE}'
     }
+  },
+  images: {
+    type: Array
   }
 })
 

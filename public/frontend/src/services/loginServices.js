@@ -1,12 +1,12 @@
 
 import axios from 'axios';
 
-const remoteURL = 'https://ksprojects.pl/store-app/'
-const url = 'http://192.168.0.73:5000/'
+import { remoteUrl } from "./remoteUrl"
+const URI = remoteUrl || 'http://192.168.0.73:5000'
 
 const postLogin = async (userData) => {
   try {
-    const res = await axios.post(`${remoteURL}api/v1/login`, userData)
+    const res = await axios.post(`${URI}/api/v1/login`, userData)
     return res
   } catch (error) {
     return error

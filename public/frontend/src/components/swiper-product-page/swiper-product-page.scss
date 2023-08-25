@@ -1,0 +1,135 @@
+.slider {
+    // поправки размера слайдера, адаптивность
+
+    .slider__flex {
+        @media (max-width: 991.98px) {
+            //На десктопе превьюшки слева, на мобилке снизу
+            flex-direction: column-reverse;
+        }
+
+        .slider__col {
+            // ширина превью взят с макета
+            min-width: 125px;
+            max-width: 125px;
+
+            .slider__thumbs {
+                //высота колонки с превью
+                height: 520px;
+
+                .swiper-slide {
+                    width: 125px;
+                    height: 125px;
+
+                    @media (max-width: 991.98px) {
+                        width: 100%;
+                        max-width: 100px;
+                        height: auto;
+                        max-height: 100px;
+                    }
+                }
+
+                .slider__image {
+                    opacity: .5;
+
+                    img {
+                        display: block;
+                        width: 125px;
+                        height: 125px;
+                        -o-object-fit: cover;
+                        object-fit: cover;
+                        border-radius: 10px;
+
+                        @media (max-width: 991.98px) {
+                            width: 100%;
+                            max-width: 100px;
+                            height: auto;
+                            max-height: 100px;
+                        }
+                    }
+                }
+
+                .slider__image:hover {
+                    opacity: 1;
+                    transition: opacity .3 ease-in-out;
+                }
+
+
+                //выделение активной картикни
+                .swiper-slide-thumb-active {
+                    -webkit-filter: grayscale(0%);
+                    filter: grayscale(0%);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+
+
+
+
+    @media (max-width: 991.98px) {
+        .slider__flex {
+
+            .slider__col {
+                flex-direction: row;
+                align-items: center;
+                margin-right: 0;
+                margin-top: 24px;
+                width: 100%;
+                max-width: 100%;
+                height: 125px;
+
+                .slider__thumbs {
+                    height: 125px;
+                    width: 100%;
+                    margin: 0 16px;
+
+                    .slider__image {
+                        width: 125px;
+                    }
+                }
+            }
+        }
+    }
+
+    .slider__images {
+        // большой слайдер
+        height: 520px;
+
+        .slider__image {
+            width: 100%;
+            height: 100%;
+
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                -o-object-fit: cover;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    @media (max-width: 991.98px) {
+        .slider__images {
+            height: auto;
+            width: 100%;
+
+            .slider__image {
+                width: 100%;
+                height: 100%;
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    -o-object-fit: cover;
+                    object-fit: cover;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+}
