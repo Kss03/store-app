@@ -51,10 +51,6 @@ const getAllProducts = async (req, res) => {
 
 
 const createProduct = async (req,res) => {
-  // console.log(req.body)
-  // console.log('files: ', req.files)
-  // console.log("startt")
-  console.log("aut", req.files)
 
   let imagesPath = []
 
@@ -63,13 +59,10 @@ const createProduct = async (req,res) => {
 
     
     if (Array.isArray(images)) {
-      console.log('array', images)
       images.forEach((imageItem) => {
   
-        console.log('array', imageItem.name)
         const imagePath = path.join(__dirname, '../public/uploads/images/' + `${imageItem.name}`)
         imagesPath.push(imageItem.name)
-        console.log('eee', imagePath)
     
         imageItem.mv(imagePath)
       })
@@ -80,17 +73,9 @@ const createProduct = async (req,res) => {
     }
   }
 
-  
-
-  console.log("tut", String(imagesPath))
-
   const body = {...req.body, images: imagesPath}
-  // console.log("tut1,5", body)
 
   const responseDB = await Product.create(body)
-  // console.log(responseDB)
-  // console.log("tut 2")
-
   res.status(200).json({msg: "uploaded"})
 }
 
@@ -98,10 +83,4 @@ const orderProducts = async (req, res) => {
   res.status(201).json({msg: 'order accepted for processing'})
 }
 
-const getImage = async (req, res) => {
-  console.log(req.params.name)
-  // res.sendFile(path.join(__dirname, '../public/uploads/images/' + `${req.params.name}`))
-  res.status(200).json({msg: 'eee'})
-}
-
-module.exports = {getOneProduct, getAllProducts, createProduct, orderProducts, getImage}
+module.exports = {getOneProduct, getAllProducts, createProduct, orderProducts}

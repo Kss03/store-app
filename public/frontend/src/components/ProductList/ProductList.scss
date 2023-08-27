@@ -1,23 +1,72 @@
 
 
+.card-type-buttons {
+
+
+  .card-type-btn {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    color: $color-grey;
+    border-radius: 4px;
+  }
+
+  .card-type-btn.active-btn {
+    background-color: $neutral-07;
+    color: $font-color-white;
+  }
+}
+
+
 .sort-products {
   width: auto;
   max-width: 250px;
-  border-radius: 24px;
-  box-shadow: $box-shadow-sm;
-  background-color: $color-white;
+  padding-bottom: 2px;
+  border: 0;
+  border-bottom: 1px solid $neutral-06;
+  border-radius: 0;
+  outline: none;
+  background: none;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 142.857%;
+  letter-spacing: -0.28px;
 
+  @media (max-width: 991.98px) {
+    width: 100%;
+    padding: 8px 14px;
+    justify-content: center;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    border-radius: 40px;
+  }
 
+  .sort__title {
+    font-style: normal;
+    font-weight: 800;
+    line-height: 200%;
+    letter-spacing: 2.04px;
+    text-transform: uppercase;
+  }
 
   .selectbar {
     border: none;
-    outline: none;
-    background: none;
+    width: 100%;
+    background-color: inherit;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    color: $neutral-07;
+    text-align: center;
   }
-}
-@media (max-width: 991.98px) {
-  .sort-products {
-    padding: 7px 15px;
+
+  .selectbar:hover {
+    cursor: pointer;
   }
 }
 
@@ -25,25 +74,27 @@
 
 .product-list {
 
-  .product-card {
+  .product-card-list {
     border-radius: 22px;
     padding: 15px 15px;
-
+    transition: background-color $transition-dot-2;
+    color: $neutral-07;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
 
     .card-image {
 
       img {
-        height: 100%;
+        height: auto;
+        max-height: 200px;
         width: 100%;
+        max-width: 250px;
         object-fit: cover;
         border-radius: 22px;
-        transition: opacity ease-in-out .3s;
-
       }
 
-      img:hover {
-        opacity: .8;
-      }
+      // img:hover {
+      //   opacity: .8;
+      // }
     }
 
     .card-title {
@@ -56,8 +107,11 @@
     
     .card-price {
       color: $color-accend;
-      font-weight: 700;
       font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 133.333%;
+      letter-spacing: -0.48px;
     }
 
     .btn-moreinfo {
@@ -71,4 +125,99 @@
       outline: 2px solid $cta-red;
     }
   }
+
+  .product-card-list:hover {
+    background-color: $neutral-07;
+
+    .card-title, .card-descr {
+      color: $font-color-white;
+    }
+
+    .card-price {
+      color: $color-orange;
+    }
+  }
+
+
+  .product-card-grid {
+    border-radius: 22px;
+    padding: 15px 15px 0 15px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    transition: background-color $transition-dot-2;
+    color: $neutral-07;
+
+    .card-image {
+
+      img {
+        height: 300px;
+        max-height: 300px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 22px;
+        transition: opacity ease-in-out .3s;
+        
+        @media (max-width: 1399.98px) {
+          height: 200px;
+          max-height: 200px;
+        }
+        @media (max-width: 991.98px) {
+          height: auto;
+          max-height: 100%;
+        }
+      }
+
+      // img:hover {
+      //   opacity: .8;
+      // }
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 100%;
+      letter-spacing: -0.4px;
+    }
+    
+    .card-price {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 133.333%;
+      letter-spacing: -0.48px;
+    }
+
+    .card-descr {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 200%;
+      letter-spacing: 2.04px;
+      text-transform: uppercase;
+    }
+
+    .btn-moreinfo {
+      background-color: $bg-pink;
+      color: $cta-red;
+      border-radius: 12px;
+      font-weight: 500;
+    }
+
+    .btn-moreinfo:hover {
+      outline: 2px solid $cta-red;
+    }
+  }
+
+  .product-card-grid:hover {
+    background-color: $neutral-07;
+
+    .card-title, .card-descr {
+      color: $font-color-white;
+    }
+
+    .card-price {
+      color: $color-orange;
+    }
+  }
+
 }

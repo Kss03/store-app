@@ -1,6 +1,8 @@
 
 
 .creator-section {
+  background-color: $neutral-02;
+  
   .form-container {
     min-height: 70vh;
     max-width: 450px;
@@ -19,10 +21,53 @@
       border-radius: 8px;
       box-shadow: $box-shadow;
 
+      .form-title {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 24px; /* 200% */
+        letter-spacing: 2.04px;
+        text-transform: uppercase;
+        color: $neutral-05;
+      }
+
+      label {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 142.857%; 
+        letter-spacing: -0.28px;
+        color: $neutral-04;
+      }
+
+      input, select {
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 160%; /* 160% */
+        letter-spacing: -0.4px;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid $neutral-04;
+      }
+
+      .form-check-input {
+        border: 1px solid $neutral-04;
+        margin: 3.5px;
+        margin-bottom: 0;
+      }
+
       .submit-btn {
-        background-color: $cta-blue;
-        color: $font-color-white;
         transition: opacity $transition-dot-2;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 24px; /* 200% */
+        letter-spacing: 2.04px;
+        text-transform: uppercase;
+        background-color: $neutral-07;
+        color: $font-color-white;
       }
       :hover {
         opacity: .9;

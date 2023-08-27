@@ -3,61 +3,166 @@
 .header {
 
   .header-title {
-    font-family: $font-marck;
-    font-size: 30px;
+    margin-right: 150px;
+    color: $neutral-08;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 166.667%;
+    text-transform: uppercase;
+
+    @media (min-width: 1199.98px) {
+      margin-right: 350px;
+    }
+    @media (max-width: 991.98px) {
+      margin-right: 0px;
+    }
+  }
+
+  .nav-link-btn, .login-btn, .card-link-btn {
+    position: relative;
+    color: $neutral-07;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 200%; 
+    letter-spacing: 2.04px;
+    text-transform: uppercase;
+    transition: color $transition-dot-2, background-color $transition-dot-2, border $transition-dot-2;
+  }
+
+  .nav-link-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    transform: translateX(-50%);
+    transform: scaleX(0%);
+    background-color: $neutral-07;
+    transition: transform $transition-dot-2;
+  }
+
+  .nav-link-btn:hover::after {
+    height: 1px;
+    width: 100%;
+    transform: scaleX(100%);
+  }
+
+  .nav-link-btn:active::after {
+    height: 2px;
+    width: 100%;
+    transform: scaleX(100%);
+  }
+
+  .card-link-btn:hover {
+    background-color: $neutral-06;
+    color: $font-color-white;
+  }
+
+  .card-link-btn:active {
+    background-color: $neutral-07;
+    color: $font-color-white;
+  }
+
+  .login-btn {
+    border-radius: 4px;
+    border: 2px solid $neutral-06;
+  }
+
+  .login-btn:hover {
+    background-color: $neutral-06;
+    color: $font-color-white;
+  }
+  .login-btn:active {
+    background-color: $neutral-07;
+    color: $font-color-white;
   }
 
   .navbar {
     background-color: $color-white;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
     box-shadow: $box-shadow;
 
     .nav-link-btn {
       color: $font-color-dark;
     }
-
-    .login-btn {
-      border-radius: 22px;
-      padding: 8px 24px;
-      background-color: $cta-blue;
-      color: $font-color-white;
-      font-weight: 700;
-    }
-    .login-btn:hover {
-      background-color: $cta-blue-text;
-      color: $cta-blue;
-    }
-    .login-btn:active {
-      background-color: $cta-blue;
-      color: $font-color-white;
-    }
-    
   }
 }
 
-@media (max-width: 997.98px) {
+@media (max-width: 991.98px) {
   .offcanvas {
 
-    .nav-link-btn {
-      color: $font-color-dark;
+    .button-container {
+      width: 100%;
+    }
+
+    .nav-link-btn, .login-btn, .card-link-btn {
+      position: relative;
+      color: $neutral-07;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 200%; 
+      letter-spacing: 2.04px;
+      text-transform: uppercase;
+      transition: color $transition-dot-2, background-color $transition-dot-2, border $transition-dot-2;
+    }
+  
+    .nav-link-btn::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      transform: translateX(-50%);
+      transform: scaleX(0%);
+      background-color: $neutral-07;
+      transition: transform $transition-dot-2;
+    }
+  
+    .nav-link-btn:hover::after {
+      height: 1px;
+      width: 100%;
+      transform: scaleX(100%);
+    }
+  
+    .nav-link-btn:active::after {
+      height: 2px;
+      width: 100%;
+      transform: scaleX(100%);
+    }
+  
+    .card-link-btn:hover {
+      background-color: $neutral-06;
+      color: $font-color-white;
+    }
+  
+    .card-link-btn:active {
+      background-color: $neutral-07;
+      color: $font-color-white;
     }
   
     .login-btn {
-      width: 100%;
-      border-radius: 22px;
-      padding: 8px 24px;
-      background-color: $cta-blue;
-      color: $font-color-white;
-      font-weight: 700;
+      border-radius: 4px;
+      border: 2px solid $neutral-06;
     }
+  
     .login-btn:hover {
-      background-color: $cta-blue-text;
-      color: $cta-blue;
+      background-color: $neutral-06;
+      color: $font-color-white;
     }
     .login-btn:active {
-      background-color: $cta-blue;
+      background-color: $neutral-07;
       color: $font-color-white;
+    }
+  
+    .navbar {
+      background-color: $color-white;
+      box-shadow: $box-shadow;
+  
+      .nav-link-btn {
+        color: $font-color-dark;
+      }
     }
   }
 }

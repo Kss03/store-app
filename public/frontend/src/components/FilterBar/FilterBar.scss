@@ -5,12 +5,24 @@
     width: 100%;
     min-width: 150px;
     margin-bottom: 10px;
-    padding: 7px 15px;
     background-color: $color-white;
-    border-radius: 25px;
-    box-shadow: $box-shadow;
+    border-radius: 4px;
     font-size: 16px;
     font-weight: 500;
+
+    @media (max-width: 991.98px) {
+      justify-content: center;
+      border: none;
+      box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+      border-radius: 40px;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%;
+      letter-spacing: -0.16px;
+      color: $neutral-07;
+      background-color: #fff;
+    }
   }
 
   .filter-form {
@@ -23,13 +35,25 @@
       margin-bottom: 10px;
       padding: 15px 15px;
       background-color: $color-white;
-      border-radius: 22px;
-      box-shadow: $box-shadow;
+      border-radius: 0;
+      // box-shadow: $box-shadow;
+      border: none;
+      border-bottom: 1px solid $cta-blue;
+
+      .form-control__title {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 200%;
+        letter-spacing: 2.04px;
+        text-transform: uppercase;
+        color: $neutral-07;
+      }
 
       .form-input {
         width: 100%;
         padding: 3px 10px ;
-        border-radius: 15px;
+        border-radius: 8px;
         outline: none;
         border: 1px solid $color-grey;
 
@@ -63,7 +87,7 @@
         width: 100%;
         padding: 3px 10px;
         border: 1px solid $color-grey;
-        border-radius: 15px;
+        border-radius: 8px;
 
       }
 
@@ -84,10 +108,15 @@
       .submit-button {
         width: 100%;
         padding: 5px 15px;
-        border-radius: 14px;
+        border-radius: 4px;
         background-color: $cta-red;
         color: $bg-pink;
-        font-weight: 700;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 200%;
+        letter-spacing: 2.04px;
+        text-transform: uppercase;
       }
       .submit-button:hover {
         background-color: $bg-pink;
@@ -97,10 +126,15 @@
       .button-reset {
         width: 100%;
         padding: 5px 15px;
-        border-radius: 14px;
+        border-radius: 4px;
         background-color: $cta-blue-text;
         color: $font-color-white;
-        font-weight: bold;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 200%;
+        letter-spacing: 2.04px;
+        text-transform: uppercase;
       }
       .button-reset:hover {
         background-color: $color-white;

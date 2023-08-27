@@ -8,6 +8,16 @@
     padding: 15px 15px;
   }
 
+  .cart-btn {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 200%;
+    letter-spacing: 2.04px;
+    text-transform: uppercase;
+    border-radius: 4px;
+  }
+
   .cart-card {
     
     .cart-image {
@@ -51,11 +61,9 @@
   }
 
   .cart-login {
-    border-radius: 12px;
     background-color: $cta-blue;
     color: $font-color-white;
-    font-weight: 700;
-    
+    font-size: 14px;
   }
 
   .cart-order {

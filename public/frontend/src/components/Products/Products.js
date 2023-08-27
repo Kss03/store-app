@@ -26,6 +26,9 @@ const Products = () => {
   //pagination
   const [page, setPage] = useState(1);
 
+  //card type
+  const [cardType, setCardType] = useState("grid");
+
   useEffect(() => {
     onGetProducts()
   }, [])
@@ -70,6 +73,7 @@ const Products = () => {
       items.sort((a, b) => b.name.localeCompare(a.name))
       setProductsData(items)
     }
+    setPage(1)
 
     return items
   }
@@ -78,7 +82,7 @@ const Products = () => {
     const start = (page - 1) * 9;
     const finish = (page - 1) * 9 + 9;
     const arr = productsData.slice(start, finish)
-    return <ProductList data={arr} />
+    return <ProductList cardType={cardType} data={arr} />
   }
 
   const loading = !isLoaded && !isError ? <Loading /> : null;
@@ -87,7 +91,7 @@ const Products = () => {
   const pagBar = isLoaded && !isError ? <Pagination setPage={setPage} dataLength={dataLength} page={page}/> : null;
 
   return (
-    <section className="product-section pt-1 pt-lg-4">
+    <section className="product-section pt-4 pt-lg-5 pb-3 pb-lg-4">
       <div className="container">
         <div className="row">
             <div className="col-lg-3 col-xxl-2 col-12">
@@ -96,7 +100,17 @@ const Products = () => {
 
           <div className="col-lg-9 col-xxl-10 col-12">
             <MediaQuery minWidth={991.98}>
-              <Sorting setSortBy={setSortBy} sortItems={sortItems}/>
+              <div className="d-flex flex-nowrap justify-content-between align-items-center mb-4">
+                <div className="card-type-buttons">
+                  <button className={`btn card-type-btn ${cardType === "grid" ? "active-btn" : null}`} onClick={() => setCardType("grid")}>
+                    <i class="bi bi-grid"></i>
+                  </button>
+                  <button className={`btn card-type-btn ${cardType === "list" ? "active-btn" : null}`} onClick={() => setCardType("list")}>
+                    <i class="bi bi-view-stacked"></i>
+                  </button>
+                </div>
+                <Sorting setSortBy={setSortBy} sortItems={sortItems}/>
+              </div>
             </MediaQuery>
             {loading}
             {error}
@@ -113,11 +127,11 @@ const Products = () => {
 const Sorting = ({setSortBy, sortItems}) => {
   const {priceLowest, priceHighest, aToZ, zToA} = sortItems;
   return (
-    <div className=" sort-products d-flex justify-content-around align-items-center ms-lg-auto mb-2 me-0 py-2 py-lg-2 px-3 px-lg-2 overflow-hidden">
-    <MediaQuery minWidth={500}>
-      <span>Sort&nbsp;By: </span>
+    <div className=" sort-products d-flex justify-content-around align-items-center ms-lg-auto mb-2 mb-lg-0 me-0 pb- pb-lg-0 px-lg-2 overflow-hidden">
+    <MediaQuery minWidth={991.98}>
+      <span className="sort__title me-2">Sort&nbsp;By: </span>
     </MediaQuery>
-    <select name="sorting" id="sorting" className=" selectbar border-0" onChange={(e) => setSortBy(e.target.value)}>
+    <select name="sorting" id="sorting" className=" selectbar" onChange={(e) => setSortBy(e.target.value)}>
       <option className="selectbar-option" value={priceLowest} default>
         Price (Lowest)
       </option>
@@ -144,7 +158,7 @@ const Pagination = ({dataLength, setPage, page}) => {
   let pagArr = [];
   for ( let i=1; i <= pageAmount; i++) {
     pagArr.push(
-      <button key={i} className={`${page === i ? styleCurrentPage : null} btn-reset p-0 rounded-circle pag-item me-2 me-lg-3 mt-2`} type="button" 
+      <button key={i} className={`${page === i ? styleCurrentPage : null} btn-reset p-0 rounded-circle pag-item me-2 me-lg-2 mt-2`} type="button" 
       onClick={() => {
         setPage(i);
         window.scrollTo(0, 0);
@@ -159,7 +173,7 @@ const Pagination = ({dataLength, setPage, page}) => {
 
   return (
     <div className="products__pagination d-flex justify-content-center align-items-center">
-      <button className="btn-reset p-0 rounded-circle pag-item me-2 me-lg-3 mt-2" 
+      <button className="btn-reset p-0 rounded-circle pag-item me-2 me-lg-2 mt-2" 
         type="button" 
         disabled={isDisableBack} 
         onClick={() => {
@@ -169,7 +183,7 @@ const Pagination = ({dataLength, setPage, page}) => {
           <i className="bi bi-arrow-left"></i>
       </button>
       {pagArr}
-      <button className="btn-reset p-0 rounded-circle pag-item me-2 me-lg-3 mt-2" 
+      <button className="btn-reset p-0 rounded-circle pag-item me-2 me-lg-2 mt-2" 
         type="button" 
         disabled={isDisableNext}
         onClick={() => {

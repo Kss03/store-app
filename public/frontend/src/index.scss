@@ -9,7 +9,7 @@
   font-weight: normal; 
 } 
 
-@import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Open+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;700;800&family=Inter:wght@400;600;700;800&display=swap');
 
 // main variables
 $font-color-dark: #1A1F16;
@@ -21,32 +21,42 @@ $color-accend: #12805D;
 $color-primary: #105E46;
 $color-cussess: #02D693;
 $color-green: #4ade80;
+$color-orange: #BF3030;
 $cta-blue: #43607C;
 $cta-blue-text: #84A6C2;
 $color-white: #fff;
 $color-red: #E5252C;
 $cta-red: #A63A50;
 $color-dark: #1A1F16; 
-$color-grey: #60695C;
-$font-marck: "Marck Script";
+$color-grey: #686A6C;
+$neutral-08: #010101;
+$neutral-07: #202025;
+$neutral-06: #555;
+$neutral-05: #686A6C;
+$neutral-04: #A6AEAD;
+$neutral-03: #E1E2E2;
+$neutral-02: #F1F4F4;
+
+$color-gradient: conic-gradient(from 180deg at 50% 50.00%, #FFE249 22.225085645914078deg, #F35950 78.13612282276154deg, #7C5BFF 158.9999771118164deg, #1CE4FF 202.3224377632141deg, #5FFF5C 341.3397216796875deg);
 
 $box-shadow: 0px 12px 30px 0px rgba(45, 45, 45, 0.18);
 $box-shadow-sm: 0px 6px 15px 0px rgba(45, 45, 45, 0.18);
 
-$transition-dot-2: .2s ease-in-out;
+$transition-dot-2: ease-in-out .2s;
 
-
+$font-inter: 'Inter', sans-serif;
+$font-inter-tight: 'Inter Tight', sans-serif;
 
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: $font-inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $font-color-dark;
-  background-color: $bg-main-color;
+  background-color: #fff !important;
 }
 
 code {

@@ -1,4 +1,4 @@
-import { useState, useEffect, Children } from "react"
+import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import {v4} from 'uuid'
 import MediaQuery from "react-responsive"
@@ -71,7 +71,7 @@ const FilterBar = ({onGetProducts, sortItems, setSortBy}) => {
     return (
       <div key={index}>
         <input type="radio" className="btn-check" name='category' value={item} id={'category' + item} autoComplete="off" />
-        <label className=" btn rounded-pill px-3 py-0" for={'category' + item}>{item}</label>
+        <label className=" btn px-3 py-0" for={'category' + item}>{item}</label>
       </div>
     )
   })
@@ -109,7 +109,7 @@ const FilterBar = ({onGetProducts, sortItems, setSortBy}) => {
 
   //create items for fast search block
   const searchedItems = fastSearch.map((item) => {
-    const {name, brand, price, _id} = item;
+    const {name, price, _id} = item;
 
     return (
       <div key={v4()} className="item d-flex">
@@ -120,14 +120,14 @@ const FilterBar = ({onGetProducts, sortItems, setSortBy}) => {
   })
 
   //collapse class 
-  const isMobile = useMediaQuery({query: '(max-width: 997.98px)'})
+  const isMobile = useMediaQuery({query: '(max-width: 991.98px)'})
   const collapseClass = (isCollapse && isMobile) ? 'collapse' : null
 
 
   return(
     <div className="filter-bar">
-      <MediaQuery maxWidth={997.98}>
-        <div className="row">
+      <MediaQuery maxWidth={991.98}>
+        <div className="row justify-content-between">
           <div className="col-6 col-md-4">
             <button type="button" 
               className=" btn filter-btn"
@@ -148,7 +148,7 @@ const FilterBar = ({onGetProducts, sortItems, setSortBy}) => {
         <div className="form-control position-relative"
           onFocus={() => setInputFocused(true)}
           onBlur={() => setTimeout(() => setInputFocused(false), 100)}>
-            <h5>Search</h5>
+            <h5 className="form-control__title">Search</h5>
             <input 
               onChange={(e) => onTypeInput(e)} 
               type="search" 
@@ -162,17 +162,17 @@ const FilterBar = ({onGetProducts, sortItems, setSortBy}) => {
             </div>
         </div>
         <div className="form-control">
-          <h5>
+          <h5 className="form-control__title">
             Category
           </h5>
           <div className="d-flex flex-column align-items-start" onChange={(e) => setCategoryRadio(e.target.value)}>
               <input type="radio" className="btn-check" name='category' value='' id='category-all' autoComplete="off" />
-                <label className="btn rounded-pill px-3 py-0" for='category-all'>All</label>
+                <label className="btn px-3 py-0" for='category-all'>All</label>
             {categoryItems}
           </div>
         </div>
         <div className="form-control">
-          <h5>Company</h5>
+          <h5 className="form-control__title">Company</h5>
           <select name="company" id="company" className="form-select selectbar" onChange={(e) => setBrandRadio(e.target.value)}>
             <option className="selectbar-option" value=''>
               All
@@ -189,7 +189,7 @@ const FilterBar = ({onGetProducts, sortItems, setSortBy}) => {
           </select>
         </div>
         <div className="form-control">
-          <h5>Color</h5>
+          <h5 className="form-control__title">Color</h5>
           <div className="colors" onChange={(e) => setColorRadio(e.target.value)}>
               <input type="radio" className="btn-check" name='colors' value='' id="all" autoComplete="off"/>
                 <label className="btn p-0 me-1" for='all'>All</label>
@@ -214,14 +214,16 @@ const FilterBar = ({onGetProducts, sortItems, setSortBy}) => {
           </div>
         </div>
         <div className="form-control">
-          <h5>Price</h5>
+          <h5 className="form-control__title">Price</h5>
           <p className="mb-0 mt-2 h5">{priceMin}&nbsp;$</p>
           <input className="price-range" type="range" name="min" min="0" max="10000" value={priceMin} onChange={(e) => onPriceMin(e)}/>
           <p className="mb-0 mt-2 h5">{priceMax}&nbsp;$</p>
           <input className="price-range" type="range" name="max" min="0" max="10000" value={priceMax} onChange={(e) => onPriceMax(e)}/>
         </div>
         <div className="form-control d-flex flex-column align-items-start">
-          <button type="submit" className="btn submit-button mb-2">Search</button>
+          <button type="submit" 
+            className="btn submit-button mb-2"
+            onClick={() => setIsCollapse(true)}>Search</button>
           <button type="reset" 
             className="btn button-reset" 
             onClick={() => {

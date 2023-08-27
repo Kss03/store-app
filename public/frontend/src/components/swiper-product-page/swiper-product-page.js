@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -38,7 +38,6 @@ export default function SwiperProductPage({imagesArr}) {
                         // параметры слайдера
                         onSwiper={setThumbsSwiper}
                         direction={swiperDirection}
-                        loop={true}
                         spaceBetween={10}
                         slidesPerView={"auto"}
                         mousewheel={true}
@@ -56,7 +55,6 @@ export default function SwiperProductPage({imagesArr}) {
 
                 <Swiper
                     // параметры слайдера
-                    loop={true}
                     slidesPerView={1} // показывать по 1 изображению
                     direction={swiperDirection}
                     mousewheel={true}

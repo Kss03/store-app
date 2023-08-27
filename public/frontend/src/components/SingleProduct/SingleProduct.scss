@@ -4,7 +4,13 @@
 
   .back-button {
     button {
-      border-radius: 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 200%; /* 200% */
+      letter-spacing: 2.04px;
+      text-transform: uppercase;
     }
   }
 
@@ -12,8 +18,26 @@
   .product-block {
     padding: 15px 15px;
     background-color: $color-white;
-    border-radius: 22px;
+    border-radius: 8px;
     box-shadow: $box-shadow;
+
+    .block-text {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%;
+      letter-spacing: -0.16px;
+      color: $neutral-05;
+    }
+
+    .block-subtitle {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 200%; /* 200% */
+      letter-spacing: -0.18px;
+      color: $neutral-07;
+    }
   }
 
   .slider {
@@ -23,10 +47,32 @@
     }
   }
 
+  .amount {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 200%; /* 200% */
+    letter-spacing: 2.04px;
+    text-transform: uppercase;
+  }
+
   .add-btn {
-    background-color: $cta-red;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 200%; /* 200% */
+    letter-spacing: 2.04px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    border: 2px solid $neutral-03;
+  }
+
+  .add-btn:hover {
+    border: 2px solid $neutral-06;
+  }
+  .add-btn:active {
+    border: 2px solid $neutral-06;
+    background-color: $neutral-06;
     color: $font-color-white;
-    font-weight: 700;
-    border-radius: 12px;
   }
 }

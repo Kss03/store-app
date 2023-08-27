@@ -1,5 +1,4 @@
-import { useRef, useState} from "react";
-import { Navigate } from "react-router-dom";
+import { useRef} from "react";
 import { createProduct } from "../../services/productServices";
 
 const Creator = () => {
@@ -74,11 +73,11 @@ const Creator = () => {
 
 
   return (
-    <div className="creator-section">
+    <div className="creator-section py-5">
       <div className="form-container d-flex justify-content-center align-items-center mx-auto">
         <form action="creator" onSubmit={(e) => handleSubmit(e)}>
           <div className="form-block row row-cols-1">
-            <h3 className="text-center mb-3">Just provide any data</h3>
+            <h3 className="text-center mb-3 form-title">Just provide any data</h3>
             <div className="col mb-2">
               <label htmlFor="Name">Name</label>
               <input type="text" 
@@ -116,6 +115,7 @@ const Creator = () => {
                 name="color" 
                 id="color"
                 ref={colorRef}
+                required
                 >
                   <option className=" text-capitalize" value="">Please choose the option</option>
                   {colorOptions}
@@ -127,6 +127,7 @@ const Creator = () => {
                 name="brand" 
                 id="brand"
                 ref={brandRef}
+                required
                 >
                   <option className=" text-capitalize" value="">Please choose the option</option>
                   {brandOptions}
@@ -162,12 +163,6 @@ const Creator = () => {
                 id="about" 
                 ref={aboutRef}
                 className="form-control"/>
-            </div>
-
-            <div>
-              <span>
-                {/* {logStatus} */}
-              </span>
             </div>
             <div className="col d-flex justify-content-center">
 

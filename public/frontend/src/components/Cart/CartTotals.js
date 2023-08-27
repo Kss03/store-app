@@ -11,12 +11,12 @@ const CartTotals = ({count, orderCart}) => {
 
   const loginButton = (
     <Link to='/login' state={{location: useLocation().pathname}}>
-      <button className="btn cart-login w-100">Log In</button>
+      <button className="btn cart-login w-100 cart-btn">Log In</button>
     </Link>
   )
 
   const submitButton = (
-    <button className="btn cart-login cart-order w-100" 
+    <button className="btn cart-login cart-order cart-btn w-100" 
       onClick={(e) => {
         e.target.disabled = true
         orderCart()

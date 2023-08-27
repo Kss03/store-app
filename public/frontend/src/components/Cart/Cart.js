@@ -68,7 +68,7 @@ const Cart = () => {
       <div className="d-flex flex-column justify-content-center align-items-center" style={{minHeight: '70vh'}}>
         <h2 className="mb-3">Your cart is empty</h2>
           <Link to='/products'>
-            <button className="btn btn-dark">
+            <button className="btn btn-dark cart-btn rounded-2">
               Continue Shopping
             </button>
           </Link>
@@ -79,7 +79,7 @@ const Cart = () => {
   const CartContainer = () => {
 
     return (
-      <div className="cart-container">
+      <div className="cart-container pt-4 pt-lg-5">
         <h1>Cart</h1>
 
         <div className=" mb-3">
@@ -90,11 +90,11 @@ const Cart = () => {
         </div>
         <div className="cart-buttons d-flex justify-content-between flex-lg-row">
           <Link to='/products'>
-            <button className="btn btn-dark">
+            <button className="btn btn-dark cart-btn rounded-2">
               Continue Shopping
             </button>
           </Link>
-          <button onClick={() => clearCart([])} className="btn btn-outline-dark">
+          <button onClick={() => clearCart([])} className="btn btn-outline-dark cart-btn rounded-2">
             Clear
           </button>
         </div>
