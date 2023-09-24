@@ -1,4 +1,4 @@
-import { BrowserRouter, HashRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import { createHashRouter, HashRouter, RouterProvider, Routes, Route} from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
@@ -13,11 +13,11 @@ import SingleProductPage from './pages/SingleProductPage';
 import Footer from './components/Footer/Footer';
 import { onLogin } from './reducers/Login/Login';
 import CreatorPage from './pages/CreatorPage';
+import ErrorBoundary from './components/Error/Error';
 
 function App() {
 
   const dispatch = useDispatch()
-
 
   useEffect(() => {
     isLogged()
@@ -33,14 +33,18 @@ function App() {
     <HashRouter>
       <Header />
       <Routes>
+
         <Route path='/'>
-          <Route index element={<Navigate to="/products" />}></Route>
+
+          <Route index element={<HomePage /> }></Route>
+          {/* <Route index element={<Navigate to="products" />}></Route> */}
+          <Route path="products" element={<ProductsPage />} />
+          <Route path="products/:id" element={<SingleProductPage />} />
+          <Route path="card" element={<CartPage />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="creator" element={<CreatorPage />} />
         </Route>
-        <Route path="/products" element={<ProductsPage />} />
-        <Route path="/products/:id" element={<SingleProductPage />} />
-        <Route path="/card" element={<CartPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/creator" element={<CreatorPage />} />
+
       </Routes>
       <Footer /> 
     </HashRouter>

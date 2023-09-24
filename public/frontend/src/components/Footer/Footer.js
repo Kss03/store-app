@@ -5,7 +5,7 @@ const Footer = () => {
     <section className="footer bg-dark">
       <div className="container">
         <div className="">
-          <h1 className=" text-light">FOOTER</h1>
+          <h1 className=" text-light m-0">FOOTER</h1>
         </div>
       </div>
     </section>

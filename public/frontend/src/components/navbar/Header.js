@@ -1,8 +1,11 @@
-import { Navbar, Nav, Container, Offcanvas } from "react-bootstrap"
+import { Navbar, Nav, Container, Offcanvas, Dropdown, DropdownButton, Button } from "react-bootstrap"
 import { Link, useLocation } from "react-router-dom"
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import MediaQuery from "react-responsive";
 import { onLogout } from "../../reducers/Login/Login";
+
+// import Logo from '../../domowy.svg';
 
 const Header = () => {
 
@@ -33,7 +36,26 @@ const Header = () => {
     </Link>
   )
 
-  const logoutButton = <button onClick={() => logoutAuth()} className=" ms-3 ms-lg-0 btn login-btn">LogOut</button>
+  const logoutButton = (
+    <div>
+      <MediaQuery minWidth={991.98}>
+        <Dropdown drop="down-centered">
+          <Dropdown.Toggle drop='start' className="ms-3 ms-lg-0 btn login-btn user-name-btn" variant="" id="logout">
+            <i class="bi bi-person-circle me-1"></i>
+            {userName}
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu>
+            <button onClick={() => logoutAuth()} className=" ms-3 ms-lg-0 btn login-btn text-center">LogOut</button>
+          </Dropdown.Menu>
+        </Dropdown>
+      </MediaQuery>
+      <MediaQuery maxWidth={991.98}>
+        <button onClick={() => handleClose()} className="btn login-btn">LogOut</button>
+      </MediaQuery>
+    </div>
+  )
+
 
   const logInOutButton = isLogin ? logoutButton : loginButton;
 
@@ -41,12 +63,13 @@ const Header = () => {
     <section className="header">
       <Navbar expand='lg' className="navbar">
         <Container>
-          <Link className="link-reset" to='/'>
-            <Navbar.Brand className="fw-bold header-title">
-              <i className="bi bi-person-circle me-2"></i>
-              {userName}
-            </Navbar.Brand>
-          </Link>
+          <div className="header-logo-container">
+            <Link className="link-reset" to='/'>
+              <Navbar.Brand className="fw-bold header-title">
+                <img className="img" src="./domowy.svg" alt="Domowy" />
+              </Navbar.Brand>
+            </Link>
+          </div>
           <Navbar.Toggle onClick={() => handleShow()} aria-controls={`offcanvasNavbar-expand-lg`} />
           <Navbar.Offcanvas
             show={show}
@@ -56,7 +79,7 @@ const Header = () => {
           >
             <Offcanvas.Header closeButton onClick={() => handleClose()}>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-lg`}>
-                {/* {userName} */}
+                {userName}
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>

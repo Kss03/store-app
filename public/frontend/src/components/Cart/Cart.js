@@ -136,7 +136,7 @@ const Cart = () => {
           localStorage.removeItem('cart')
           setIsOrdered(true)
           setTimeout(() => {
-            navigate('/')
+            navigate('/products')
           }, 2000)
         }
       })
